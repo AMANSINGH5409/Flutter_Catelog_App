@@ -17,6 +17,8 @@ class HomePage extends StatelessWidget {
         ),
         drawer: const Drawer(),
       ),
+      themeMode: ThemeMode.dark,
+      darkTheme: ThemeData(brightness: Brightness.dark),
     );
   }
 }
