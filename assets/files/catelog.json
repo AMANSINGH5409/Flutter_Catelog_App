@@ -1,0 +1,52 @@
+{
+    "Products":[
+        {
+            "id":1,
+            "name":"APPLE iPhone 12",
+            "desc":"A14 Bionic Chip with Next Generation",
+            "price":999,
+            "color":"#f46755",
+            "image":"https://rukminim2.flixcart.com/image/312/312/kg8avm80/mobile/q/8/f/apple-iphone-12-dummyapplefsn-original-imafwg8drqaam5vu.jpeg?q=70"
+        },
+        {
+            "id":2,
+            "name":"Acer Nitro Ryzen 5",
+            "desc":"Hexa Core 5600H - (8 GB/1 TB HDD/256 GB SSD/Windows 10 Home",
+            "price":800,
+            "color":"#443e4a",
+            "image":"https://rukminim2.flixcart.com/image/312/312/kmns7m80/computer/o/0/x/na-gaming-laptop-acer-original-imagfgq66pufmnny.jpeg?q=70"
+        },
+        {
+            "id":3,
+            "name":"APPLe Macbook Air",
+            "desc":"(8 GB/256 GB SSD)(13.3 inch,Space Grey,1.29 kg)",
+            "price":1000,
+            "color":"#afafaf",
+            "image":"https://rukminim2.flixcart.com/image/312/312/kp5sya80/screen-guard/tempered-glass/o/v/n/apple-macbook-air-m1-13-3-inch-lightwings-original-imag3gh5xftgbpg3.jpeg?q=70"
+        },
+        {
+            "id":4,
+            "name":"APPLE Watch Series 3",
+            "desc":"MTF32HN/A 42 mm Space Grey Aluminium",
+            "price":500,
+            "color":"#020202",
+            "image":"https://rukminim2.flixcart.com/image/312/312/jmi22kw0/smartwatch/y/d/j/mtf32hn-a-apple-original-imaf9ec8ssmfcuxf.jpeg?q=70"
+        },
+        {
+            "id":5,
+            "name":"vivo T1 5G",
+            "desc":"vivo T1 5G (Rainbow Fantasy, 128 GB)  (6 GB RAM)#JustHere",
+            "price":200,
+            "color":"#8af0e8",
+            "image":"https://rukminim2.flixcart.com/image/312/312/kzd147k0/mobile/m/c/f/-original-imagbe5qknarjywp.jpeg?q=70"
+        },
+        {
+            "id":6,
+            "name":"World Wear Footwear",
+            "desc":"Exclusive Range of Stylish Comfortable Sports Sneakers Running Shoes",
+            "price":50,
+            "color":"#fb591b",
+            "image":"https://rukminim2.flixcart.com/image/580/696/ktizdzk0/shoe/y/b/x/7-ws-9310-tying-grey-original-imag6ut3hzm2zyqm.jpeg?q=50"
+        }
+    ]
+}
