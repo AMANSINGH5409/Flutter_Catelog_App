@@ -8,7 +8,7 @@ class MyTheme {
       fontFamily: GoogleFonts.poppins().fontFamily,
       cardColor: Colors.white,
       canvasColor: creamColor,
-      buttonColor: lightBluishColor,
+      buttonColor: darkBluishColor,
       accentColor: darkBluishColor,
       appBarTheme: const AppBarTheme(
         color: Colors.white,
@@ -34,7 +34,7 @@ class MyTheme {
           color: Colors.white,
         ),
         titleTextStyle: TextStyle(
-            color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.w500),
+            color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.w500),
       ));
 
   //Colors

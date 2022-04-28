@@ -36,14 +36,12 @@ class Item {
 }
 
 class CatelogModel {
-  static List<Item> items = [
-    // Item(
-    //     id: 1,
-    //     name: "APPLE iPhone 12",
-    //     desc: "A14 Bionic Chip with Next Generation",
-    //     price: 999,
-    //     color: "#f46755",
-    //     image:
-    //         "https://rukminim2.flixcart.com/image/312/312/kg8avm80/mobile/q/8/f/apple-iphone-12-dummyapplefsn-original-imafwg8drqaam5vu.jpeg?q=70")
-  ];
+  static List<Item> items = [];
+
+  //Get Item by Id
+  Item getById(int id) =>
+      items.firstWhere((element) => element.id == id, orElse: null);
+
+  //Get Item By Position
+  Item getByPosition(int pos) => items[pos];
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class MyDrawer extends StatelessWidget {
   String imageUrl =
@@ -9,19 +10,22 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Colors.deepPurple,
+        color: context.theme.buttonColor,
         child: ListView(
           children: [
-            DrawerHeader(
-                padding: EdgeInsets.all(0),
-                child: UserAccountsDrawerHeader(
-                  margin: EdgeInsets.all(0),
-                  accountName: Text("Aman Rajan Singh"),
-                  accountEmail: Text("amansingh@gmail.com"),
-                  currentAccountPicture: CircleAvatar(
-                    backgroundImage: NetworkImage(imageUrl),
-                  ),
-                )),
+            Container(
+              color: Colors.transparent,
+              child: DrawerHeader(
+                  padding: EdgeInsets.all(0),
+                  child: UserAccountsDrawerHeader(
+                    margin: EdgeInsets.all(0),
+                    accountName: Text("Aman Rajan Singh"),
+                    accountEmail: Text("amansingh@gmail.com"),
+                    currentAccountPicture: CircleAvatar(
+                      backgroundImage: NetworkImage(imageUrl),
+                    ),
+                  )),
+            ),
             const ListTile(
               leading: Icon(
                 CupertinoIcons.home,
