@@ -11,18 +11,17 @@ class ItemWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: StadiumBorder(),
       child: ListTile(
         onTap: () {
           print("${item.name}");
         },
         leading: Image.network(
           item.image,
-          height: 40,
-          width: 40,
+          height: 35,
+          width: 35,
         ),
         title: Text(item.name),
-        subtitle: Text(item.description),
+        subtitle: Text(item.desc),
         trailing: Text(
           "\$${item.price}",
           textScaleFactor: 1.5,

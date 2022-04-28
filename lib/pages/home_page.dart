@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
+    await Future.delayed(Duration(seconds: 2));
     var catelogJson = await rootBundle.loadString("assets/files/catelog.json");
     var decodedData = jsonDecode(catelogJson);
     var productsData = decodedData["Products"];
@@ -38,16 +39,56 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
-          itemCount: CatelogModel.items.length,
-          itemBuilder: (context, index) {
-            return ItemWidgets(
-              item: CatelogModel.items[index],
-            );
-          },
-        ),
+        child: (CatelogModel.items != null && CatelogModel.items.isNotEmpty)
+            ? GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 16,
+                    crossAxisSpacing: 16),
+                itemBuilder: (context, index) {
+                  final item = CatelogModel.items[index];
+                  return Card(
+                      clipBehavior: Clip.antiAlias,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0)),
+                      child: GridTile(
+                        header: Container(
+                          child: Text(
+                            item.name,
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                          padding: const EdgeInsets.all(12.0),
+                          decoration:
+                              const BoxDecoration(color: Colors.deepPurple),
+                        ),
+                        child: Image.network(item.image),
+                        footer: Container(
+                          child: Text(
+                            item.name,
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                          padding: const EdgeInsets.all(12.0),
+                          decoration: const BoxDecoration(color: Colors.black),
+                        ),
+                      ));
+                },
+                itemCount: CatelogModel.items.length,
+              )
+            : const Center(
+                child: CircularProgressIndicator(),
+              ),
       ),
       drawer: MyDrawer(),
     );
   }
 }
+
+
+// ListView.builder(
+//                 itemCount: CatelogModel.items.length,
+//                 itemBuilder: (context, index) {
+//                   return ItemWidgets(
+//                     item: CatelogModel.items[index],
+//                   );
+//                 },
+//               )

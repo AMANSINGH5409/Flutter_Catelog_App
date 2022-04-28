@@ -11,7 +11,7 @@
         {
             "id":2,
             "name":"Acer Nitro Ryzen 5",
-            "desc":"Hexa Core 5600H - (8 GB/1 TB HDD/256 GB SSD/Windows 10 Home",
+            "desc":"Hexa Core 5600H-(8 GB/1 TB HDD/256 GB SSD)",
             "price":800,
             "color":"#443e4a",
             "image":"https://rukminim2.flixcart.com/image/312/312/kmns7m80/computer/o/0/x/na-gaming-laptop-acer-original-imagfgq66pufmnny.jpeg?q=70"
@@ -35,18 +35,50 @@
         {
             "id":5,
             "name":"vivo T1 5G",
-            "desc":"vivo T1 5G (Rainbow Fantasy, 128 GB)  (6 GB RAM)#JustHere",
+            "desc":"(Rainbow Fantasy, 128 GB) (6 GB RAM)",
             "price":200,
             "color":"#8af0e8",
             "image":"https://rukminim2.flixcart.com/image/312/312/kzd147k0/mobile/m/c/f/-original-imagbe5qknarjywp.jpeg?q=70"
         },
         {
             "id":6,
-            "name":"World Wear Footwear",
-            "desc":"Exclusive Range of Stylish Comfortable Sports Sneakers Running Shoes",
+            "name":"Shoes Footwear",
+            "desc":"Exclusive Comfortable Sneakers Running Shoes",
             "price":50,
             "color":"#fb591b",
             "image":"https://rukminim2.flixcart.com/image/580/696/ktizdzk0/shoe/y/b/x/7-ws-9310-tying-grey-original-imag6ut3hzm2zyqm.jpeg?q=50"
+        },
+        {
+            "id":7,
+            "name":"SAMSUNG Smart TV",
+            "desc":"108 cm(43 inch)Ultra HD(4K)Smart TV",
+            "price":150,
+            "color":"#020202",
+            "image":"https://rukminim2.flixcart.com/image/312/312/kc3p30w0/television/z/s/c/samsung-ua43tue60fkxxl-original-imaftah2k5v9fyqb.jpeg?q=70"
+        },
+        {
+            "id":8,
+            "name":"Hitachi Window AC ",
+            "desc":"White (RAW318HFDO, Copper Condenser)",
+            "price":180,
+            "color":"#ffffff",
+            "image":"https://rukminim2.flixcart.com/image/312/312/l1b1oy80/air-conditioner-new/t/g/a/-original-imagcw3tzahdfnzs.jpeg?q=70"
+        },
+        {
+            "id":9,
+            "name":"Cotton Shirt",
+            "desc":"Unstitched Cotton Shirt Fabric Printed",
+            "price":40,
+            "color":"#006368",
+            "image":"https://rukminim2.flixcart.com/image/880/1056/kzx1a4w0/fabric/v/1/e/no-2-35-m-unstitched-na-plain-green-retail-store-original-imagbtq8hhrxwmmu.jpeg?q=50"
+        },
+        {
+            "id":10,
+            "name":"realme GT 2",
+            "desc":"(Steel Black, 128 GB)  (8 GB RAM)",
+            "price":100,
+            "color":"#8a8b8d",
+            "image":"https://rukminim2.flixcart.com/image/416/416/l27wtjk0/mobile/1/v/z/-original-imagdm3tage99brz.jpeg?q=70"
         }
     ]
 }

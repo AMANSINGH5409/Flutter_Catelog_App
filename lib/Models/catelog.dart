@@ -1,7 +1,7 @@
 class Item {
   final int id;
   final String name;
-  final String description;
+  final String desc;
   final num price;
   final String color;
   final String image;
@@ -9,7 +9,7 @@ class Item {
   Item(
       {required this.id,
       required this.name,
-      required this.description,
+      required this.desc,
       required this.price,
       required this.color,
       required this.image});
@@ -18,7 +18,7 @@ class Item {
     return Item(
       id: map["id"],
       name: map["name"],
-      description: map["desc"],
+      desc: map["desc"],
       price: map["price"],
       color: map["color"],
       image: map["image"],
@@ -28,7 +28,7 @@ class Item {
   toMap() => {
         "id": id,
         "name": name,
-        "desc": description,
+        "desc": desc,
         "price": price,
         "color": color,
         "image": image,
@@ -37,13 +37,13 @@ class Item {
 
 class CatelogModel {
   static List<Item> items = [
-    Item(
-        id: 1,
-        name: "APPLE iPhone 12",
-        description: "A14 Bionic Chip with Next Generation",
-        price: 999,
-        color: "#f46755",
-        image:
-            "https://rukminim2.flixcart.com/image/312/312/kg8avm80/mobile/q/8/f/apple-iphone-12-dummyapplefsn-original-imafwg8drqaam5vu.jpeg?q=70")
+    // Item(
+    //     id: 1,
+    //     name: "APPLE iPhone 12",
+    //     desc: "A14 Bionic Chip with Next Generation",
+    //     price: 999,
+    //     color: "#f46755",
+    //     image:
+    //         "https://rukminim2.flixcart.com/image/312/312/kg8avm80/mobile/q/8/f/apple-iphone-12-dummyapplefsn-original-imafwg8drqaam5vu.jpeg?q=70")
   ];
 }
