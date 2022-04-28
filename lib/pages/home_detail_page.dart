@@ -12,9 +12,11 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       bottomNavigationBar: Container(
-        color: MyTheme.creamColor,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -23,15 +25,15 @@ class HomeDetailPage extends StatelessWidget {
             ElevatedButton(
                     onPressed: () {},
                     style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(MyTheme.darkBluishColor),
+                        backgroundColor: MaterialStateProperty.all(
+                            context.theme.buttonColor),
                         shape: MaterialStateProperty.all(StadiumBorder())),
-                    child: "Buy".text.xl.make())
-                .wh(100, 50),
+                    child: "Add to cart".text.xl.make())
+                .wh(140, 50),
           ],
         ).p20(),
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: context.canvasColor,
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -40,7 +42,7 @@ class HomeDetailPage extends StatelessWidget {
                     tag: Key(catelogItem.id.toString()),
                     child:
                         Image.network(catelogItem.image).centered().scale105())
-                .h32(context)
+                .h24(context)
                 .py8(),
             Expanded(
                 child: VxArc(
@@ -49,14 +51,19 @@ class HomeDetailPage extends StatelessWidget {
               edge: VxEdge.TOP,
               child: Container(
                 width: context.screenWidth,
-                color: MyTheme.creamColor,
+                color: context.cardColor,
                 child: Column(
                   children: [
                     catelogItem.name.text.xl4.bold
-                        .color(MyTheme.darkBluishColor)
+                        .color(context.accentColor)
                         .make(),
                     catelogItem.desc.text.gray400.make(),
-                    10.heightBox
+                    10.heightBox,
+                    "Nunc facilisis tincidunt felis, vel eleifend lectus pharetra at. Proin arcu felis, lacinia et luctus sed, congue ac diam. Mauris id luctus felis, in ultrices ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam erat nulla, maximus at ante id, pulvinar feugiat tortor. Phasellus arcu mauris, congue sed iaculis."
+                        .text
+                        .coolGray400
+                        .make()
+                        .p8(),
                   ],
                 ).py64(),
               ),
