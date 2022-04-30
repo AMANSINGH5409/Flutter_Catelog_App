@@ -1,6 +1,12 @@
 import 'package:flutter_catelog/Models/catelog.dart';
 
 class CartModel {
+  static final cartModel = CartModel._internal();
+
+  CartModel._internal();
+
+  factory CartModel() => cartModel;
+
   //Catelog Fields
   late CatelogModel _catelog;
 
@@ -19,7 +25,8 @@ class CartModel {
   List<Item> get items => _itemIds.map((id) => _catelog.getById(id)).toList();
 
   //Get Total Price
-  num get totalPrice => items.fold(0, (total, current) => current.price);
+  num get totalPrice =>
+      items.fold(0, (total, current) => total + current.price);
 
   //Add Item
   void add(Item item) {

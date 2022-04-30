@@ -36,6 +36,12 @@ class Item {
 }
 
 class CatelogModel {
+  static final catelogModel = CatelogModel._internal();
+
+  CatelogModel._internal();
+
+  factory CatelogModel() => catelogModel;
+
   static List<Item> items = [];
 
   //Get Item by Id
