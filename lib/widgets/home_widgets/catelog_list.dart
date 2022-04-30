@@ -30,6 +30,7 @@ class CatelogItem extends StatelessWidget {
   final Item catelog;
 
   const CatelogItem({Key? key, required this.catelog})
+      // ignore: unnecessary_null_comparison
       : assert(catelog != null),
         super(key: key);
 

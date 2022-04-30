@@ -1,40 +1,36 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_catelog/core/store.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../../Models/cart.dart';
 import '../../Models/catelog.dart';
 
-class AddToCart extends StatefulWidget {
+class AddToCart extends StatelessWidget {
+  // ignore: non_constant_identifier_names
   final Item Catelog;
   const AddToCart({
     Key? key,
+    // ignore: non_constant_identifier_names
     required this.Catelog,
   }) : super(key: key);
-
-  @override
-  State<AddToCart> createState() => AddToCartState();
-}
-
-class AddToCartState extends State<AddToCart> {
-  final _cart = CartModel();
-
   @override
   Widget build(BuildContext context) {
-    bool isInCart = _cart.items.contains(widget.Catelog) ?? false;
+    VxState.watch(context, on: [AddMutation, RemoveMutation]);
+    final CartModel _cart = (VxState.store as MyStore).cart;
+    bool isInCart = _cart.items.contains(Catelog) ?? false;
     return ElevatedButton(
       onPressed: () {
         if (!isInCart) {
-          isInCart = isInCart.toggle();
-          final _catelog = CatelogModel();
-          _cart.catelog = _catelog;
-          _cart.add(widget.Catelog);
-          setState(() {});
+          AddMutation(item: Catelog);
         }
       },
       style: ButtonStyle(
+          // ignore: deprecated_member_use
           backgroundColor: MaterialStateProperty.all(context.theme.buttonColor),
-          shape: MaterialStateProperty.all(StadiumBorder())),
-      child: isInCart ? Icon(Icons.done) : Icon(CupertinoIcons.cart_badge_plus),
+          shape: MaterialStateProperty.all(const StadiumBorder())),
+      child: isInCart
+          ? const Icon(Icons.done)
+          : const Icon(CupertinoIcons.cart_badge_plus),
     );
   }
 }

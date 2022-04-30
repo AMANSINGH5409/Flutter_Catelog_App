@@ -1,7 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_catelog/Models/cart.dart';
 import 'package:velocity_x/velocity_x.dart';
+
+import '../core/store.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class CartPage extends StatelessWidget {
       body: Column(
         children: [
           _CartList().p32().expand(),
-          Divider(),
+          const Divider(),
           _CartTotal(),
         ],
       ),
@@ -26,15 +27,25 @@ class CartPage extends StatelessWidget {
 }
 
 class _CartTotal extends StatelessWidget {
-  final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
+    final CartModel _cart = (VxState.store as MyStore).cart;
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$${_cart.totalPrice}".text.xl5.color(context.accentColor).make(),
+          VxConsumer(
+            mutations: const {RemoveMutation},
+            notifications: const {},
+            builder: (context, store, status) {
+              return "\$${_cart.totalPrice}"
+                  .text
+                  .xl5
+                  .color(context.accentColor)
+                  .make();
+            },
+          ),
           30.heightBox,
           ElevatedButton(
             onPressed: () {
@@ -42,8 +53,9 @@ class _CartTotal extends StatelessWidget {
                   SnackBar(content: "Buying not supported yet.".text.make()));
             },
             style: ButtonStyle(
-              shape: MaterialStateProperty.all(StadiumBorder()),
+              shape: MaterialStateProperty.all(const StadiumBorder()),
               backgroundColor:
+                  // ignore: deprecated_member_use
                   MaterialStateProperty.all(context.theme.buttonColor),
             ),
             child: "Buy".text.xl.color(Colors.white).make(),
@@ -54,29 +66,20 @@ class _CartTotal extends StatelessWidget {
   }
 }
 
-class _CartList extends StatefulWidget {
-  const _CartList({Key? key}) : super(key: key);
-
-  @override
-  State<_CartList> createState() => _CartListState();
-}
-
-class _CartListState extends State<_CartList> {
-  final _cart = CartModel();
+class _CartList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    VxState.watch(context, on: [RemoveMutation]);
+    final CartModel _cart = (VxState.store as MyStore).cart;
     return _cart.items.isEmpty
         ? "Notihing to show".text.xl3.makeCentered()
         : ListView.builder(
-            itemCount: _cart.items?.length,
+            itemCount: _cart.items.length,
             itemBuilder: (context, index) => ListTile(
-              leading: Icon(Icons.done),
+              leading: Image.network(_cart.items[index].image).wh(45, 45),
               trailing: IconButton(
-                onPressed: () {
-                  _cart.remove(_cart.items[index]);
-                  setState(() {});
-                },
-                icon: Icon(Icons.remove_circle_outline),
+                onPressed: () => RemoveMutation(item: _cart.items[index]),
+                icon: const Icon(Icons.remove_circle_outline),
               ),
               title: _cart.items[index].name.text.make(),
             ),

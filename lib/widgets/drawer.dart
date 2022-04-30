@@ -6,21 +6,24 @@ class MyDrawer extends StatelessWidget {
   String imageUrl =
       "https://cdn.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616__480.jpg";
 
+  MyDrawer({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
+        // ignore: deprecated_member_use
         color: context.theme.buttonColor,
         child: ListView(
           children: [
             Container(
               color: Colors.transparent,
               child: DrawerHeader(
-                  padding: EdgeInsets.all(0),
+                  padding: const EdgeInsets.all(0),
                   child: UserAccountsDrawerHeader(
-                    margin: EdgeInsets.all(0),
-                    accountName: Text("Aman Rajan Singh"),
-                    accountEmail: Text("amansingh@gmail.com"),
+                    margin: const EdgeInsets.all(0),
+                    accountName: const Text("Aman Rajan Singh"),
+                    accountEmail: const Text("amansingh@gmail.com"),
                     currentAccountPicture: CircleAvatar(
                       backgroundImage: NetworkImage(imageUrl),
                     ),

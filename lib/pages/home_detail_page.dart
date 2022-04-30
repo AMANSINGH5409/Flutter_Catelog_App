@@ -7,6 +7,7 @@ class HomeDetailPage extends StatelessWidget {
   final Item catelogItem;
 
   const HomeDetailPage({Key? key, required this.catelogItem})
+      // ignore: unnecessary_null_comparison
       : assert(catelogItem != null),
         super(key: key);
   @override

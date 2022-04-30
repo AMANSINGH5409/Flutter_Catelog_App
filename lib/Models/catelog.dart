@@ -36,16 +36,11 @@ class Item {
 }
 
 class CatelogModel {
-  static final catelogModel = CatelogModel._internal();
-
-  CatelogModel._internal();
-
-  factory CatelogModel() => catelogModel;
-
   static List<Item> items = [];
 
   //Get Item by Id
   Item getById(int id) =>
+      // ignore: null_closures
       items.firstWhere((element) => element.id == id, orElse: null);
 
   //Get Item By Position

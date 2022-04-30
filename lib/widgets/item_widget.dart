@@ -5,6 +5,7 @@ class ItemWidgets extends StatelessWidget {
   final Item item;
 
   const ItemWidgets({Key? key, required this.item})
+      // ignore: unnecessary_null_comparison
       : assert(item != null),
         super(key: key);
 
@@ -13,7 +14,7 @@ class ItemWidgets extends StatelessWidget {
     return Card(
       child: ListTile(
         onTap: () {
-          print("${item.name}");
+          // print("${item.name}");
         },
         leading: Image.network(
           item.image,

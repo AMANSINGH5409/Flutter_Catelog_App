@@ -5,6 +5,7 @@ class CatelogImage extends StatelessWidget {
   final String catelogImg;
 
   const CatelogImage({Key? key, required this.catelogImg})
+      // ignore: unnecessary_null_comparison
       : assert(catelogImg != null),
         super(key: key);
   @override
